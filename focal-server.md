@@ -104,7 +104,7 @@ for mysubv in ${subvols[@]}; do btrfs subvolume create /mnt/${mysubv}; done
 
 umount -R /mnt
 
-for i in $(seq 1 ${#subvols} ); do mount -t btrfs -o subvol=${subvols[i]},$o_btrfs LABEL=system ${mountpoints[i]}; done
+for i in $(seq 1 ${#subvols} ); do mount -t btrfs -o subvol=${subvols[i]},$o_btrfs LABEL=system /mnt/${mountpoints[i]}; done
 
 mkdir -p /mnt/boot/efi
 mount -o $o_btrfs LABEL=EFI /mnt/boot/efi
