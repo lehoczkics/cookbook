@@ -1,7 +1,9 @@
-# Install KVM Windows 10 to Focal-based vserver
+# Install Windows10 KVM to ZFS ZVOL onto Ubuntu 20.04 server
 
-Assume virtio and Win10 ISO-s are already placed in `/tank/kvm/iso`.
-If not then get them:
+See [Focal server install howto](focal-server.md) for how to install the physical machine itself.
+<br>
+Assume virtio driver CD image and Win10 ISO are already placed in `/tank/kvm/iso`.\
+If not then get them, eg.:
 ```
 cd /tank/kvm/iso/
 wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso

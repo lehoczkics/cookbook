@@ -1,5 +1,7 @@
-# Create KVM Ubuntu Server
+# Install Ubuntu KVM to ZFS ZVOL onto Ubuntu 20.04 server
 
+See [Focal server install howto](focal-server.md) for how to install the physical machine itself.
+<br>
 Make sure Focal Server installer ISO is present at `/tank/kvm/iso/focalserver.iso`\
 In this examlpe 2 vCPUs, 16GB RAM and 300GB disk is used; feel free to use different values.
 
