@@ -7,6 +7,7 @@ This howto meant to be a collection of copy-pastable commands which can be used 
   1. the rest of the space as another RAID member - to be used as the root file system
 * btrfs file system with subvolumes for snapshots
 * Ubuntu Focal Server as the system
+* Optonally create ZFS pool from anonter two SSDs in mirror.
 
 ## Start live system, enable ssh
 
@@ -170,6 +171,22 @@ echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 Exit chroot, shut down live system, remove the live ISO and boot the new install!
 
+### Optional: create ZFS pool from another SSD pair
+Assume **sdc** and **sdd** are the data disks, check with `lsblk`:
+
+```
+zpool create -o ashift=12 tank mirror sdc sdd -f
+zpool export tank
+rm /dev/disk/by-id/wwn*
+zpool import tank -d /dev/disk/by-id
+
+# options stolen from Ubuntu factory install
+zfs set xattr=sa compression=lz4 dnodesize=auto acltype=posixacl atime=off canmount=off mountpoint=none tank
+
+zfs create tank/lxd
+zfs create tank/kvm
+zfs create -o mountpoint=/tank/kvm/iso tank/kvm/iso
+```
 
 ## Profit
 
