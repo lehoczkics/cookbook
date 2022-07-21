@@ -98,17 +98,17 @@ Get "stable" **.deb** from github releases\
 https://github.com/neovim/neovim/releases/tag/stable
 
 #### Alacritty
-There is a snap package but it failed to run when I tried so I ended up installing it manually.\
+There is a snap package but it failed to run when I tried so I ended up installing (building) it manually.\
 https://github.com/alacritty/alacritty/blob/master/INSTALL.md
 
-Set it as default xterm:
+Set it as default xterm:\
 `sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which alacritty) 50`
 
 #### lsd aka. ls deluxe
 Get **.deb** from github releases\
 https://github.com/Peltoche/lsd/releases
 
-exa is already installed but lsd seems more like a drop-in replacement for ls so I ended up using it via an [ls alias](https://github.com/lehoczkics/dotfiles/blob/master/zsh/.zshrc#L150).
+exa is already installed but lsd seems more like a drop-in replacement for ls so I ended up using it via an [alias of ls](https://github.com/lehoczkics/dotfiles/blob/master/zsh/.zshrc#L150).
 
 #### delta
 Get **.deb** from github releases\
@@ -134,11 +134,12 @@ Install p10k theme:\
 `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
 Install zsh extras:\
-`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`\
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
 
 ## Optional: Install dotfiles
 To get the whole thing working, proceed to get [dotfiles](https://github.com/lehoczkics/dotfiles); or at least [the zsh folder](https://github.com/lehoczkics/dotfiles/tree/master/zsh)
+
 
 ## References
 https://medium.com/@satriajanaka09/setup-zsh-oh-my-zsh-powerlevel10k-on-ubuntu-20-04-c4a4052508fd
