@@ -46,7 +46,7 @@ Add PPA repo:
 
 ```sh
 echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
-https://regolith-desktop.io/release-ubuntu-jammy-amd64 jammy main" | \
+https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
 sudo tee /etc/apt/sources.list.d/regolith.list
 ```
 
@@ -62,7 +62,13 @@ Reboot and choose Regolith session at login.
 Additional Regolith packages:
 
 ```sh
-sudo apt install regolith-lightdm-config regolith-look-* i3xrocks-focused-window-name i3xrocks-rofication i3xrocks-info i3xrocks-app-launcher i3xrocks-memory i3xrocks-battery
+sudo apt install regolith-lightdm-config regolith-look-* i3xrocks-focused-window-name i3xrocks-rofication i3xrocks-info i3xrocks-app-launcher i3xrocks-memory i3xrocks-battery i3xrocks-volume
+```
+
+Set Dracula look:
+
+```sh
+regolith-look set dracula
 ```
 
 Remove unneeded packages:
